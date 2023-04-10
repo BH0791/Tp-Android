@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends ListActivity {
     
@@ -22,12 +23,12 @@ public class MainActivity extends ListActivity {
                 new ArrayAdapter(this, android.R.layout.simple_list_item_1, data);
         setListAdapter(adapter);
         
-        getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                return false;
-            }
-        });
+        getListView().setOnItemLongClickListener( ( parent, view, position, id ) -> {
+            Toast.makeText( MainActivity.this, "Clics long - id = " + id, Toast.LENGTH_LONG ).show( );
+            return false;
+        } );
+        
+        getListView().setOnItemClickListener( ( parent, view, position, id ) -> Toast.makeText( MainActivity.this, "Clics court- id = " + id, Toast.LENGTH_LONG ).show( ) );
     }
     
     
