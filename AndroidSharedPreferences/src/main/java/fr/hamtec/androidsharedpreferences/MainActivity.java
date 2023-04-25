@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             radioGroupDiffLevel.check(checkedRadioButtonId);
             
         }else {
-            this.radioGroupDiffLevel.check(R.id.radioButton_medium);
+            radioGroupDiffLevel.check(R.id.radioButton_medium);
             Toast.makeText(this,"Utiliser les paramètres de jeu par défaut",Toast.LENGTH_LONG).show();
         }
     
