@@ -1,4 +1,9 @@
-## ProgressBar
-### public class ProgressBar extends View
+### ProgressBar
 
-Élément d’interface utilisateur qui indique la progression d’une opération. La barre de progression prend en charge deux modes pour représenter la progression :
+---
+
+*public class ProgressBar extends View* [API Android](https://developer.android.com/reference/android/widget/ProgressBar)
+
+---
+
+Sous Android, ProgressBar est un composant de l'interface permettant d'afficher la progression d'une activité.
