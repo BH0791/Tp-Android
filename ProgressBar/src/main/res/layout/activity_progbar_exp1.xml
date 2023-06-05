@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+                xmlns:app = "http://schemas.android.com/apk/res-auto"
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:layout_margin = "16dp"
+        >
+    
+    <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+    
+    <LinearLayout
+            android:orientation = "vertical"
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent"
+            >
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:text="Animations de chargement Android"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+        
+        <!-- Rotation Plane  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="RotatingPlane"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_rotation_plane"
+                style="@style/SpinKitView.RotatingPlane"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AAAAAA" />
+        
+        <!-- Double Bounce  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="DoubleBounce"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_"
+                style="@style/SpinKitView.DoubleBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AAAABB" />
+        
+        <!-- Wave  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="Wave"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_wave"
+                style="@style/SpinKitView.Wave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AAAACC" />
+        
+        <!-- WanderingCubes  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="WanderingCubes"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_WanderingCubes"
+                style="@style/SpinKitView.WanderingCubes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AAAADD" />
+        
+        <!-- Pulse  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="Pulse"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_pulse"
+                style="@style/SpinKitView.Pulse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AAAAEE" />
+        
+        <!-- ChasingDots  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="ChasingDots"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_ChasingDots"
+                style="@style/SpinKitView.ChasingDots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AAAAFF" />
+        
+        <!-- ThreeBounce  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="ThreeBounce"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_ThreeBounce"
+                style="@style/SpinKitView.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AABBAA" />
+        
+        <!-- Circle  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="Circle"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_Circle"
+                style="@style/SpinKitView.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AACCAA" />
+        
+        <!-- CubeGrid  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="CubeGrid"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_CubeGrid"
+                style="@style/SpinKitView.CubeGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AADDAA" />
+        
+        <!-- FadingCircle  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="FadingCircle"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_FadingCircle"
+                style="@style/SpinKitView.FadingCircle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AAEEAA" />
+        
+        <!-- FoldingCube  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="FoldingCube"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_FoldingCube"
+                style="@style/SpinKitView.FoldingCube"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#AAFFAA" />
+        
+        <!-- RotatingCircle  -->
+        <TextView
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:text="RotatingCircle"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+        
+        <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_RotatingCircle"
+                style="@style/SpinKitView.RotatingCircle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:SpinKit_Color="#BBAAAA" />
+        
+    </LinearLayout >
+    </ScrollView>
+    
+    
+</RelativeLayout >

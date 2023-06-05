@@ -40,73 +40,127 @@ public class MainActivity extends AppCompatActivity {
         
     }
     
+//    private void doStartProgressBar1()  {
+//        final int MAX = 110;
+//        this.progressBar1.setMax(MAX);
+//
+//        Thread thread = new Thread(new Runnable()  {
+//
+//            @Override
+//            public void run() {
+//                handler.post(new Runnable() {
+//                    public void run() {
+//                        buttonStart1.setEnabled(false);
+//                    }
+//                });
+//                for( int i =0; i < MAX; i++) {
+//                    final int progress = i + 1;
+//                    // Do something (Download, Upload, Update database,..)
+//                    SystemClock.sleep(20); // Sleep 20 milliseconds.
+//
+//                    // Update interface.
+//                    handler.post(new Runnable() {
+//                        public void run() {
+//                            progressBar1.setProgress(progress);
+//                            int percent = (progress * 100) / MAX;
+//
+//                            textViewInfo1.setText("Percent: " + percent + " %");
+//                            if(progress == MAX)  {
+//                                textViewInfo1.setText("Completed!");
+//                                buttonStart1.setEnabled(true);
+//                            }
+//                        }
+//                    });
+//                }
+//            }
+//        });
+//        thread.start();
+//    }
+    
     private void doStartProgressBar1()  {
         final int MAX = 110;
         this.progressBar1.setMax(MAX);
         
-        Thread thread = new Thread(new Runnable()  {
-            
-            @Override
-            public void run() {
-                handler.post(new Runnable() {
-                    public void run() {
-                        buttonStart1.setEnabled(false);
-                    }
-                });
-                for( int i =0; i < MAX; i++) {
-                    final int progress = i + 1;
-                    // Do something (Download, Upload, Update database,..)
-                    SystemClock.sleep(20); // Sleep 20 milliseconds.
+        Thread thread = new Thread( ( ) -> {
+            handler.post( ( ) -> buttonStart1.setEnabled(false) );
+            for( int i =0; i < MAX; i++) {
+                final int progress = i + 1;
+                // Do something (Download, Upload, Update database,..)
+                SystemClock.sleep(20); // Sleep 20 milliseconds.
+                
+                // Update interface.
+                handler.post( ( ) -> {
+                    progressBar1.setProgress(progress);
+                    int percent = (progress * 100) / MAX;
                     
-                    // Update interface.
-                    handler.post(new Runnable() {
-                        public void run() {
-                            progressBar1.setProgress(progress);
-                            int percent = (progress * 100) / MAX;
-                            
-                            textViewInfo1.setText("Percent: " + percent + " %");
-                            if(progress == MAX)  {
-                                textViewInfo1.setText("Completed!");
-                                buttonStart1.setEnabled(true);
-                            }
-                        }
-                    });
-                }
+                    textViewInfo1.setText("Percent: " + percent + " %");
+                    if(progress == MAX)  {
+                        textViewInfo1.setText("Completed!");
+                        buttonStart1.setEnabled(true);
+                    }
+                } );
             }
-        });
+        } );
         thread.start();
     }
     
-    private void doStartProgressBar2()  {
-        this.progressBar2.setIndeterminate(true);
+//    private void doStartProgressBar2()  {
+//        this.progressBar2.setIndeterminate(true);
+//
+//        Thread thread = new Thread(new Runnable()  {
+//
+//            @Override
+//            public void run() {
+//                // Update interface
+//                handler.post(new Runnable() {
+//                    public void run() {
+//                        textViewInfo2.setText("Working...");
+//                        buttonStart2.setEnabled(false);
+//                    }
+//                });
+//                // Do something ... (Update database,..)
+//                SystemClock.sleep(5000); // Sleep 5 seconds.
+//
+//                progressBar2.setIndeterminate(false);
+//                progressBar2.setMax(1);
+//                progressBar2.setProgress(1);
+//
+//                // Update interface
+//                handler.post(new Runnable() {
+//                    public void run() {
+//                        textViewInfo2.setText("Completed!");
+//                        buttonStart2.setEnabled(true);
+//                    }
+//                });
+//            }
+//        });
+//        thread.start();
+//    }
+private void doStartProgressBar2()  {
+    this.progressBar2.setIndeterminate(true);
+    
+    Thread thread = new Thread( ( ) -> {
         
-        Thread thread = new Thread(new Runnable()  {
-            
-            @Override
-            public void run() {
-                // Update interface
-                handler.post(new Runnable() {
-                    public void run() {
-                        textViewInfo2.setText("Working...");
-                        buttonStart2.setEnabled(false);
-                    }
-                });
-                // Do something ... (Update database,..)
-                SystemClock.sleep(5000); // Sleep 5 seconds.
-                
-                progressBar2.setIndeterminate(false);
-                progressBar2.setMax(1);
-                progressBar2.setProgress(1);
-                
-                // Update interface
-                handler.post(new Runnable() {
-                    public void run() {
-                        textViewInfo2.setText("Completed!");
-                        buttonStart2.setEnabled(true);
-                    }
-                });
-            }
-        });
-        thread.start();
-    }
+        // Update interface
+        handler.post( ( ) -> {
+            textViewInfo2.setText("Working...");
+            buttonStart2.setEnabled(false);
+        } );
+        
+        
+        // Do something ... (Update database,..)
+        SystemClock.sleep(5000); // Sleep 5 seconds.
+        
+        progressBar2.setIndeterminate(false);
+        progressBar2.setMax(1);
+        progressBar2.setProgress(1);
+        
+        // Update interface
+        handler.post( ( ) -> {
+            textViewInfo2.setText("Completed!");
+            buttonStart2.setEnabled(true);
+        } );
+    } );
+    thread.start();
+}
 }

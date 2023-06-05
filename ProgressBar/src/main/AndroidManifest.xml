@@ -8,12 +8,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TpAndroid" >
         <activity
-            android:name=".MainActProgBar"
+            android:name=".MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main_act_prog_bar"
             android:theme="@style/Theme.TpAndroid.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ProgBarExp1"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
