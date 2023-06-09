@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android = "http://schemas.android.com/apk/res/android"
+      xmlns:app = "http://schemas.android.com/apk/res-auto"
+        >>
+    <item
+            android:title = "Open"
+            android:id = "@+id/menuItem_open"
+            android:icon = "@drawable/icon_open"
+            />
+    <item
+            android:title = "Share"
+            android:id = "@+id/menuItem_share"
+            android:icon = "@drawable/icon_share"
+            />
+    <item
+            android:title = "Delete"
+            android:id = "@+id/menuItem_delete"
+            android:icon = "@drawable/icon_delete"
+            />
+    <item
+            android:id = "@+id/menuItem_search"
+            android:icon = "@drawable/icon_search"
+            android:title = "Search"
+            app:actionViewClass = "android.widget.SearchView"
+            app:showAsAction = "ifRoom"
+            />
+    <item
+            android:title = "Setting"
+            android:id = "@+id/menuIteme_setting"
+            android:icon = "@drawable/icon_setting"
+            app:showAsAction = "ifRoom"
+            />
+</menu >
