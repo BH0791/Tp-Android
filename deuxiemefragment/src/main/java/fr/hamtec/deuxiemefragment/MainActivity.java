@@ -15,10 +15,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume( ) {
         super.onResume( );
-        Fragment_home fragmentHome = new Fragment_home();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace( R.id.framelayout_main, fragmentHome );
+        transaction.replace( R.id.framelayout_main, new Fragment_home() );
         transaction.commit();
     }
     
