@@ -1,4 +1,4 @@
-package fr.hamtec.demoalertdialog;
+package fr.hamtec.img1;
 
 import org.junit.Test;
 

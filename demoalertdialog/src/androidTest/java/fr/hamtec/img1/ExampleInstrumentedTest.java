@@ -1,4 +1,4 @@
-package fr.hamtec.demoalertdialog;
+package fr.hamtec.img1;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
