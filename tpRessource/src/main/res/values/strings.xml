@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Tp-Android</string>
+
+    <!--String array-->
+    <string-array name="i_like_array">
+        <item>chocolate</item>
+        <item>television</item>
+        <item>internet</item>
+        <item>nicotine</item>
+        <item>hug</item>
+        <item>Santa Claus</item>
+    </string-array>
+
+</resources>
