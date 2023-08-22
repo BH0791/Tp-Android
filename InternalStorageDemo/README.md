@@ -1,0 +1,1 @@
+### Lecture et écriture des données dans le stockage interne
