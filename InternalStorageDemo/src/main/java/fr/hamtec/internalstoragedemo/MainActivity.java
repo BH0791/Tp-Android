@@ -101,10 +101,10 @@ public class MainActivity extends AppCompatActivity {
         Log.i( "HB", "saveBufferedWriter() " + data );
 
         try {
-            FileOutputStream outo = openFileOutput( simpleFileName, MODE_PRIVATE );
-            PrintWriter out = new PrintWriter( outo ) ;
-            out.write( data );
-            out.close();
+            FileOutputStream fout = openFileOutput( simpleFileName, MODE_PRIVATE );
+            PrintWriter pwout = new PrintWriter( fout ) ;
+            pwout.write( data );
+            pwout.close();
 
         }catch( Exception ex ) {
             Log.i( "HB", "saveBufferedWriter() enregistrer" );
