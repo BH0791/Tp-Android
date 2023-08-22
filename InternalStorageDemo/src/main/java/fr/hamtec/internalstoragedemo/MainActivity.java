@@ -11,9 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener( new View.OnClickListener( ) {
             @Override
             public void onClick( View v ) {
-                saveDate();
+                saveBufferedWriter();
+                //saveDate();
             }
         } );
 
@@ -91,4 +95,22 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"Erreur:"+ ex.getMessage(),Toast.LENGTH_SHORT).show();
         }
     }
+    private  void saveBufferedWriter(){
+
+        String data = editText.getText().toString();
+        Log.i( "HB", "saveBufferedWriter() " + data );
+
+        try {
+            FileOutputStream outo = openFileOutput( simpleFileName, MODE_PRIVATE );
+            PrintWriter out = new PrintWriter( outo ) ;
+            out.write( data );
+            out.close();
+
+        }catch( Exception ex ) {
+            Log.i( "HB", "saveBufferedWriter() enregistrer" );
+            Toast.makeText(this,"File saved!",Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
 }
