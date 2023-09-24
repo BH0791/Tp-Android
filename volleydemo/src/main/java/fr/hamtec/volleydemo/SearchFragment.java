@@ -117,7 +117,7 @@ public class SearchFragment extends Fragment {
     private void launchSearch( ) {
         try {
             String api_key = "62d96ef75676fba47c537de195f1b3c6";
-            String title = URLEncoder.encode( searchText.getText( ).toString( ), "UTF_8" );
+            String title = URLEncoder.encode( searchText.getText( ).toString( ), "UTF-8" );
             String url = String.format( "https://api.themoviedb.org/3/search/movie?api_key=%s&query=%s&language=fr-FR", api_key, title );
             
             JsonObjectRequest request = new JsonObjectRequest(
