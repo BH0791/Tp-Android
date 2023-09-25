@@ -1,18 +1,22 @@
 package fr.hamtec.volleydemo;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
@@ -30,6 +34,7 @@ public class SearchFragment extends Fragment {
     private Button searchButton;
     private RequestQueue requestQueue;
     private ListView searchList;
+    private ImageLoader imageLoader;
     
     class SearchListAdapter extends ArrayAdapter < Movie > {
         private Context context;
@@ -138,6 +143,33 @@ public class SearchFragment extends Fragment {
             requestQueue = Volley.newRequestQueue( getActivity( ) );
         return requestQueue;
     }
+    ImageLoader getImageLoader( ) {
+        
+        if ( imageLoader == null ){
+            
+            ImageLoader.ImageCache imageCache = new ImageLoader.ImageCache( ) {
+                
+                LruCache<String, Bitmap> cache = new LruCache <>( 10 );
+                
+                @Nullable
+                @org.jetbrains.annotations.Nullable
+                @Override
+                public Bitmap getBitmap( String url ) {
+                    return cache.get( url );
+                }
+                
+                @Override
+                public void putBitmap( String url, Bitmap bitmap ) {
+                    cache.put( url, bitmap );
+                }
+            };
+            
+            imageLoader = new ImageLoader( getRequestQueue(), imageCache );
+            
+        }
+        
+        return imageLoader;
+    }
     
     private Response.Listener < JSONObject > jsonRequestListener = response -> {
         try {
@@ -196,8 +228,11 @@ public class SearchFragment extends Fragment {
             
             Button closeButton = view.findViewById( R.id.movie_closeDetail );
             RelativeLayout detailLayout = view.findViewById( R.id.movie_detailLayout );
-            NetworkImageView detailposter = view.findViewById( R.id.movie_poster );
-            TextView detailplot = view.findViewById( R.id.movie_plot );
+            NetworkImageView detailPoster = view.findViewById( R.id.movie_poster );
+            TextView detailPlot = view.findViewById( R.id.movie_plot );
+            
+            detailButton.setVisibility( View.VISIBLE );
+            detailLayout.setVisibility( View.GONE );
             
             titre.setText( movie.title );
             dateSortie.setText( movie.releaseDate );
@@ -219,11 +254,12 @@ public class SearchFragment extends Fragment {
 
                         String posterPath = response.getString( "poster_path" );
                         String plot = response.getString( "overview" );
-                        //detailPlot.setText( plot );
+                        detailPlot.setText( plot );
                         Log.e( "JSON", response.getString( "title" ) );
-
-                        String url1 = "https://image.tmdb.org/t/p/w500/" + posterPath;
-                        //detailPoster.setImageUrl( url, getImageLoader( ) );
+                        // w92/w154/w342/w500/w780
+                        String url1 = "https://image.tmdb.org/t/p/w780/" + posterPath;
+                        
+                        detailPoster.setImageUrl( url1, getImageLoader( ) );
 
                     } catch ( JSONException e ) {
                         Log.e( "JSON", e.getLocalizedMessage( ) );
