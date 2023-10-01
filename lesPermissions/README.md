@@ -1,0 +1,2 @@
+# Les permissions sous Android
+
