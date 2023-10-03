@@ -1,7 +1,10 @@
 package fr.hamtec.lespermissions;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
