@@ -14,3 +14,14 @@ Utilisation des fragments
   &nbsp;&nbsp;&nbsp;permissions accordées si non une boite de dialogue demande Voulez-vous 
 
   &nbsp;&nbsp;&nbsp;réévaluer votre décision
+
+```
+AndroidManifest.xml
+
+    <uses-feature
+            android:name = "android.hardware.telephony"
+            android:required = "false"
+            />
+    <uses-permission android:name = "android.permission.SEND_SMS"/>
+
+```
