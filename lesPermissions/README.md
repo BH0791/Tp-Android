@@ -9,3 +9,8 @@ Utilisation des fragments
   &nbsp;&nbsp;&nbsp;demande effective de permission doit être faite en invoquant la méthode
   
   &nbsp;&nbsp;&nbsp;*requestPermissions()*
+- La méthode *ensurePermission()* simule la demande au demarrage de app si oui
+
+  &nbsp;&nbsp;&nbsp;permissions accordées si non une boite de dialogue demande Voulez-vous 
+
+  &nbsp;&nbsp;&nbsp;réévaluer votre décision
